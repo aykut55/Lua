@@ -1,0 +1,320 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{871437AB-268A-4AA7-9304-CC85177EDF3E}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<PackageImports>vclx.bpi;vcl.bpi;vclimg.bpi;dbrtl.bpi;Rave77VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_140.bpi;Intraweb_100_140.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapServer.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi</PackageImports>
+			<ProjectType>CppStaticLibrary</ProjectType>
+			<AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<IncludePath>src\;$(CG_BOOST_ROOT)\boost\tr1\tr1;$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\vcl;$(CG_BOOST_ROOT);$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<IntermediateOutputDir>Debug</IntermediateOutputDir>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<IntermediateOutputDir>Release</IntermediateOutputDir>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="src\lapi.c">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<None Include="src\lapi.h">
+				<BuildOrder>1</BuildOrder>
+			</None>
+			<CppCompile Include="src\lauxlib.c">
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<None Include="src\lauxlib.h">
+				<BuildOrder>3</BuildOrder>
+			</None>
+			<CppCompile Include="src\lbaselib.c">
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lbitlib.c">
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lcode.c">
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<None Include="src\lcode.h">
+				<BuildOrder>7</BuildOrder>
+			</None>
+			<CppCompile Include="src\lcorolib.c">
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lctype.c">
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<None Include="src\lctype.h">
+				<BuildOrder>10</BuildOrder>
+			</None>
+			<CppCompile Include="src\ldblib.c">
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\ldebug.c">
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<None Include="src\ldebug.h">
+				<BuildOrder>13</BuildOrder>
+			</None>
+			<CppCompile Include="src\ldo.c">
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<None Include="src\ldo.h">
+				<BuildOrder>15</BuildOrder>
+			</None>
+			<CppCompile Include="src\ldump.c">
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lfunc.c">
+				<BuildOrder>17</BuildOrder>
+			</CppCompile>
+			<None Include="src\lfunc.h">
+				<BuildOrder>18</BuildOrder>
+			</None>
+			<CppCompile Include="src\lgc.c">
+				<BuildOrder>19</BuildOrder>
+			</CppCompile>
+			<None Include="src\lgc.h">
+				<BuildOrder>20</BuildOrder>
+			</None>
+			<CppCompile Include="src\linit.c">
+				<BuildOrder>21</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\liolib.c">
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\llex.c">
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<None Include="src\llex.h">
+				<BuildOrder>24</BuildOrder>
+			</None>
+			<None Include="src\llimits.h">
+				<BuildOrder>25</BuildOrder>
+			</None>
+			<CppCompile Include="src\lmathlib.c">
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lmem.c">
+				<BuildOrder>27</BuildOrder>
+			</CppCompile>
+			<None Include="src\lmem.h">
+				<BuildOrder>28</BuildOrder>
+			</None>
+			<CppCompile Include="src\loadlib.c">
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lobject.c">
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<None Include="src\lobject.h">
+				<BuildOrder>31</BuildOrder>
+			</None>
+			<CppCompile Include="src\lopcodes.c">
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<None Include="src\lopcodes.h">
+				<BuildOrder>33</BuildOrder>
+			</None>
+			<CppCompile Include="src\loslib.c">
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lparser.c">
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<None Include="src\lparser.h">
+				<BuildOrder>36</BuildOrder>
+			</None>
+			<None Include="src\lprefix.h">
+				<BuildOrder>37</BuildOrder>
+			</None>
+			<CppCompile Include="src\lstate.c">
+				<BuildOrder>38</BuildOrder>
+			</CppCompile>
+			<None Include="src\lstate.h">
+				<BuildOrder>39</BuildOrder>
+			</None>
+			<CppCompile Include="src\lstring.c">
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<None Include="src\lstring.h">
+				<BuildOrder>41</BuildOrder>
+			</None>
+			<CppCompile Include="src\lstrlib.c">
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\ltable.c">
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<None Include="src\ltable.h">
+				<BuildOrder>44</BuildOrder>
+			</None>
+			<CppCompile Include="src\ltablib.c">
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\ltm.c">
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<None Include="src\ltm.h">
+				<BuildOrder>47</BuildOrder>
+			</None>
+			<CppCompile Include="src\lua.c">
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<None Include="src\lua.h">
+				<BuildOrder>49</BuildOrder>
+			</None>
+			<None Include="src\lua.hpp">
+				<BuildOrder>50</BuildOrder>
+			</None>
+			<CppCompile Include="src\luac.c">
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<None Include="src\luaconf.h">
+				<BuildOrder>52</BuildOrder>
+			</None>
+			<None Include="src\lualib.h">
+				<BuildOrder>53</BuildOrder>
+			</None>
+			<CppCompile Include="src\lundump.c">
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<None Include="src\lundump.h">
+				<BuildOrder>55</BuildOrder>
+			</None>
+			<CppCompile Include="src\lutf8lib.c">
+				<BuildOrder>56</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="src\lvm.c">
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<None Include="src\lvm.h">
+				<BuildOrder>58</BuildOrder>
+			</None>
+			<CppCompile Include="src\lzio.c">
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<None Include="src\lzio.h">
+				<BuildOrder>60</BuildOrder>
+			</None>
+			<None Include="src\Makefile"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppStaticLibrary</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1055</VersionInfo>
+						<VersionInfo Name="CodePage">1254</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs"/>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k140.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp140.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
